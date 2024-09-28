@@ -10,3 +10,23 @@ Content-Type: application/json
     "contactMobileNo": "0891234567",
     "status": "A"
 }
+
+
+### find all
+GET http://localhost:3000/items
+
+### find one
+GET http://localhost:3000/items/2
+
+
+### update
+PATCH http://localhost:3000/items/2
+Content-Type: application/json
+
+{
+    "title": "Mouse wireless",
+    "contactMobileNo": "0991234567"
+}
+
+### delete
+DELETE http://localhost:3000/items/3

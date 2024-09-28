@@ -18,18 +18,29 @@ export class ItemsService {
   }
 
   findAll() {
-    return `This action returns all items`;
+    return this.itemRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} item`;
+    return this.itemRepository.findOneBy({ id });
   }
 
-  update(id: number, updateItemDto: UpdateItemDto) {
-    return `This action updates a #${id} item`;
+  update(id: number, updateItemDto: UpdateItemDto) {    
+    // => { id, title, contectMobileNo }
+    // update item set tile = '', con = '' where id = ?
+
+    // const updateItem = {
+    //   id: id,
+    //   title: updateItemDto.title,
+    //   contactMobileNo = updateItemDto.contactMobileNo
+    //   status: updateItemDto.state
+    // }
+
+    return this.itemRepository.save({ id, ...updateItemDto });
   }
 
   remove(id: number) {
-    return `This action removes a #${id} item`;
+    // const where = { id: id}
+    return this.itemRepository.delete({ id })
   }
 }
