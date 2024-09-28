@@ -35,3 +35,13 @@ DELETE http://localhost:3000/items/999
 
 ### find one by string
 GET http://localhost:3000/items/A
+
+### create with wrong amount number type
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{
+    "title": "",
+    "amount": "SHOUD_BE_NUM",
+    "price": 5000    
+}
