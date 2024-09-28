@@ -4,8 +4,9 @@ POST http://localhost:3000/items
 Content-Type: application/json
 
 {
-    "title": "Mouse",
+    "title": "Mouse2",
     "amount": 10,
     "price": 5000,
-    "contactMobileNo": "0891234567"
+    "contactMobileNo": "0891234567",
+    "status": "A"
 }
