@@ -30,3 +30,8 @@ Content-Type: application/json
 
 ### delete
 DELETE http://localhost:3000/items/999
+
+### validation
+
+### find one by string
+GET http://localhost:3000/items/A
