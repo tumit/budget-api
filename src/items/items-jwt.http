@@ -32,3 +32,23 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hb
 ### approve
 PATCH http://localhost:3000/items/4/approve
 Authorization: Bearer {{authToken}}
+
+
+###
+### Admin Zone
+###
+# @name loginAdmin
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "a1001",
+    "password": "changeit"
+}
+
+###
+@authTokenAdmin = {{loginAdmin.response.body.access_token}}
+
+### find all
+PATCH http://localhost:3000/items/1/approve
+Authorization: Bearer {{authTokenAdmin}}
