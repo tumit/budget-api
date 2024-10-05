@@ -7,9 +7,7 @@ Content-Type: application/json
     "title": "Monitor 3",
     "amount": 10,
     "price": 5000,
-    "contactMobileNo": "0891234567",
-    "status": "A",
-    "desc": "Important"
+    "contactMobileNo": "0891234567"
 }
 
 ### search by multi ids
