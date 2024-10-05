@@ -28,6 +28,7 @@ export class UsersService {
 
     // saved
     const savedUser = await this.userRepository.save(userWithEncPassword);
+    console.log('savedUser', savedUser)
 
     // spread password filed from savedUser
     const { password, ...userWithoutPassword } = savedUser;

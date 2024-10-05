@@ -1,4 +1,4 @@
-import { ArgumentsHost, Catch, ConflictException, ExceptionFilter } from '@nestjs/common';
+import { ArgumentsHost, BadRequestException, Catch, ConflictException, ExceptionFilter } from '@nestjs/common';
 import { BaseExceptionFilter } from '@nestjs/core';
 import { QueryFailedError } from 'typeorm';
 
@@ -17,10 +17,23 @@ export class QueryFailedErrorFilter extends BaseExceptionFilter {
       return;
     }
 
+    if (this.isNotExists(message)) {
+      // return 400 BadRequest
+      super.catch(new BadRequestException(message.replace('does not exist', 'ไม่พบ')), host)
+      return;
+    }
+
+    // return next
+    super.catch(exception, host)
+
   }
 
   private isDuplicateKeyValue(message?: string): boolean {
     return message && message.includes('duplicate key value')
+  }
+
+  private isNotExists(message?: string): boolean {
+    return message && message.includes('not exist')
   }
 
 }
