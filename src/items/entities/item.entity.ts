@@ -13,6 +13,11 @@ export class Item {
   @Column()
   title: string;
 
+  @Column({
+    nullable: true
+  })
+  description: string;
+
   @Column()
   amount: number;
 
