@@ -30,7 +30,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hb
 
 
 ### approve
-PATCH http://localhost:3000/items/4/approve
+PATCH http://localhost:3000/items/5/approve
 Authorization: Bearer {{authToken}}
 
 
@@ -49,6 +49,25 @@ Content-Type: application/json
 ###
 @authTokenAdmin = {{loginAdmin.response.body.access_token}}
 
-### find all
-PATCH http://localhost:3000/items/1/approve
+### approve
+PATCH http://localhost:3000/items/5/approve
 Authorization: Bearer {{authTokenAdmin}}
+
+###
+### Manager Zone
+###
+# @name loginManager
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "m1001",
+    "password": "changeit"
+}
+
+###
+@authTokenManager = {{loginManager.response.body.access_token}}
+
+### Manager approve
+PATCH http://localhost:3000/items/5/approve
+Authorization: Bearer {{authTokenManager}}
