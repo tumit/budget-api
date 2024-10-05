@@ -11,6 +11,8 @@ Content-Type: application/json
     "status": "A"
 }
 
+### search by multi ids
+GET http://localhost:3000/items/search?ids=1,4
 
 ### find all
 GET http://localhost:3000/items
