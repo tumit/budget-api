@@ -39,6 +39,10 @@ DELETE http://localhost:3000/items/999
 ### find one by string
 GET http://localhost:3000/items/A
 
+### delete by string
+DELETE http://localhost:3000/items/B
+
+
 ### create with wrong amount number type
 POST http://localhost:3000/items
 Content-Type: application/json
