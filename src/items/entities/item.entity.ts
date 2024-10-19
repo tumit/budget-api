@@ -25,7 +25,8 @@ export class Item {
   price: number;
 
   @Column({
-      nullable: true
+    name:"contact_mobile_no",
+    nullable: true
   })
   contactMobileNo: string;
 
