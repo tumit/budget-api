@@ -18,6 +18,8 @@ async function bootstrap() {
   const { httpAdapter } = app.get(HttpAdapterHost)
   app.useGlobalFilters(new QueryFailedErrorFilter(httpAdapter))
 
+  app.enableCors(); // add
+
   await app.listen(3000);
 }
 bootstrap();

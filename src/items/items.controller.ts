@@ -52,4 +52,12 @@ export class ItemsController {
     return this.itemsService.approve(id);
   }
 
+  // add
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles([Role.ADMIN, Role.MANAGER])
+  @Patch(':id/reject')
+  reject(@Param('id', ParseIntPipe) id: number) {
+    return this.itemsService.reject(id);
+  }
+
 }
